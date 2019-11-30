@@ -15,7 +15,7 @@ export class Header extends Component {
             <i className="fa fa-heart-o"></i>
           </li>
           <li className="menu-prec">
-            <span className="num">{cartItems.length}</span>
+            <span className="num"></span>
             <i className="fa fa-shopping-bag"></i>
           </li>
         </ul>

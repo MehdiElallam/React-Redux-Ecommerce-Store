@@ -1,21 +1,29 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { filterProductsBySize } from "../redux/products/productActions";
 
-export class Filter extends Component {
+class Filter extends Component {
   render() {
     return (
       <div className="row row-margin">
         <div className="col-md-3"></div>
-        <div className="col-md-9">
+        <div className="col-md-9 col-xs-12">
           <div className="col-md-4">
             <p>
-              Showing {this.props.result} of {this.props.result}
+              Showing {this.props.products.length} of{" "}
+              {this.props.products.length}
             </p>
           </div>
           <div className="col-md-2"></div>
           <div className="col-md-6">
             <select
               className="form-control select size-by"
-              onChange={this.props.handleChangeSize}
+              onChange={e =>
+                this.props.filterProductsBySize(
+                  this.props.products,
+                  e.target.value
+                )
+              }
             >
               <option value="">ALL</option>
               <option value="S">S</option>
@@ -39,4 +47,18 @@ export class Filter extends Component {
   }
 }
 
-export default Filter;
+const mapStateToProps = state => {
+  return {
+    products: state.products.items,
+    size: state.products.size,
+    filteredItems: state.products.filteredItems
+  };
+};
+
+/*const mapDispatchToProps = dispatch => {
+  return {
+    filterProductsBySize: (e, products) => dispatch(filterProductsBySize())
+  };
+};*/
+
+export default connect(mapStateToProps, filterProductsBySize)(Filter);
