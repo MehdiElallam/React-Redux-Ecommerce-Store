@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchProducts } from "../redux/products/productActions";
+import {
+  fetchProducts,
+  handleAddToCart
+} from "../redux/products/productActions";
 
 class Products extends Component {
   componentWillMount() {
@@ -12,7 +15,9 @@ class Products extends Component {
         <div className="thumbnail text-center col-mine">
           <a
             href={`#${product.id}`}
-            onClick={e => this.props.handleAddToCart(e, product)}
+            onClick={() =>
+              this.props.handleAddToCart(this.props.cartItems, product)
+            }
           >
             <img src={`/products/${product.sku}_2.jpg`} alt={product.title} />
           </a>
@@ -41,7 +46,9 @@ class Products extends Component {
           <div className="product-menu">
             <button
               className="btn-add-cart"
-              onClick={e => this.props.handleAddToCart(e, product)}
+              onClick={() =>
+                this.props.handleAddToCart(this.props.cartItems, product)
+              }
             >
               <span className="cart-icon">
                 <i className="fa fa-shopping-bag"></i>
@@ -64,11 +71,12 @@ class Products extends Component {
 }
 
 const mapStateToProps = state => {
-  return { products: state.products.filteredItems };
-};
-const mapDispatchToProps = dispatch => {
   return {
-    fetchProducts: () => dispatch(fetchProducts())
+    products: state.products.filteredItems,
+    cartItems: state.products.cartItems
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Products);
+
+export default connect(mapStateToProps, { fetchProducts, handleAddToCart })(
+  Products
+);

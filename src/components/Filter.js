@@ -10,8 +10,8 @@ class Filter extends Component {
         <div className="col-md-9 col-xs-12">
           <div className="col-md-4">
             <p>
-              Showing {this.props.products.length} of{" "}
-              {this.props.products.length}
+              Showing {this.props.filteredItems.length} of{" "}
+              {this.props.filteredItems.length}
             </p>
           </div>
           <div className="col-md-2"></div>
@@ -55,10 +55,4 @@ const mapStateToProps = state => {
   };
 };
 
-/*const mapDispatchToProps = dispatch => {
-  return {
-    filterProductsBySize: (e, products) => dispatch(filterProductsBySize())
-  };
-};*/
-
-export default connect(mapStateToProps, filterProductsBySize)(Filter);
+export default connect(mapStateToProps, { filterProductsBySize })(Filter);

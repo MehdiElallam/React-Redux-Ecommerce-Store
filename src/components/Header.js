@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 export class Header extends Component {
   render() {
@@ -15,7 +16,7 @@ export class Header extends Component {
             <i className="fa fa-heart-o"></i>
           </li>
           <li className="menu-prec">
-            <span className="num"></span>
+            <span className="num">{cartItems.length}</span>
             <i className="fa fa-shopping-bag"></i>
           </li>
         </ul>
@@ -24,4 +25,9 @@ export class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    cartItems: state.products.cartItems
+  };
+};
+export default connect(mapStateToProps)(Header);
