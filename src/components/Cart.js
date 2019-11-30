@@ -11,7 +11,7 @@ export class Cart extends Component {
           {cartItems.map(item => (
             <div className="product" key={item.id}>
               <div className="product-img">
-                <img src={`/products/${item.sku}_2.jpg`} />
+                <img src={`/products/${item.sku}_2.jpg`} alt={item.title} />
               </div>
 
               <div className="product-infos">
@@ -23,15 +23,11 @@ export class Cart extends Component {
                 <p className="quantity quantity-sm">
                   Quantity : {item.quantity}
                 </p>
-                <span
-                  className="product-delete"
-                  onClick={e => this.props.deleteItemFromCart(e, product.id)}
-                >
-                  <i className="fa fa-trash-o"></i>
-                </span>
               </div>
             </div>
           ))}
+          <hr />
+          <p>TOTAL: </p>
         </div>
       </div>
     );

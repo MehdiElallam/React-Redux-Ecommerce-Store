@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Filter from "./components/Filter";
 import Cart from "./components/Cart";
@@ -18,6 +19,7 @@ class App extends React.Component {
     this.handleChangeSort = this.handleChangeSort.bind(this);
     this.handleChangeSize = this.handleChangeSize.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
+    //this.deleteItemFromCart = this.deleteItemFromCart.bind(this);
   }
   componentWillMount() {
     fetch("http://localhost:8000/products")
@@ -29,6 +31,12 @@ class App extends React.Component {
         });
         console.log(data);
       });
+    const cartItemsLocal = localStorage.getItem("cartItems");
+    if (cartItemsLocal) {
+      this.setState({
+        cartItems: JSON.parse(cartItemsLocal)
+      });
+    }
   }
   handleAddToCart(e, product) {
     this.setState(state => {
@@ -43,12 +51,11 @@ class App extends React.Component {
       if (!alreadyInCart) {
         cartItems.push({ ...product, quantity: 1 });
       }
-      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      //localStorage.setItem("cartItems", JSON.stringify(cartItems));
       return cartItems;
     });
-
-    console.log(this.state.cartItems);
   }
+
   handleChangeSize(e) {
     this.setState({ size: e.target.value });
     this.ListOfProducts();
@@ -106,7 +113,7 @@ class App extends React.Component {
           <div className="col-md-3">
             <Cart
               cartItems={this.state.cartItems}
-              deleteItemFromCart={this.handleDeleteItemFromCart}
+              deleteItemFromCart={this.deleteItemFromCart}
             />
           </div>
           <div className="col-md-9">

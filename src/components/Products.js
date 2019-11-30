@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Products extends Component {
   render() {
     const productItems = this.props.products.map(product => (
-      <div className="col-md-4" key={product.id}>
+      <div className="col-md-3" key={product.id}>
         <div className="thumbnail text-center col-mine">
           <a
             href={`#${product.id}`}
@@ -42,6 +42,9 @@ export default class Products extends Component {
                 <i className="fa fa-shopping-bag"></i>
               </span>
               Add To Cart
+            </button>
+            <button className="btn-add-favourite">
+              <i className="fa fa-heart-o"></i>
             </button>
             <button className="btn-add-favourite">
               <i className="fa fa-heart-o"></i>

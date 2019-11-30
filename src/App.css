@@ -47,8 +47,12 @@ span.num {
   right: -10px;
   font-size: 11px;
 }
+.products {
+  margin-top: 40px;
+}
 .products .col-mine {
   position: relative;
+  border: 0;
 }
 .col-mine .cover {
   position: absolute;
@@ -72,10 +76,10 @@ p.reviews .normal-star {
 }
 .product-menu {
   position: absolute;
-  bottom: 80px;
+  bottom: 30%;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 80%;
+  width: 100%;
   opacity: 0;
   transition: 0.4s all;
 }
@@ -83,7 +87,7 @@ p.reviews .normal-star {
   opacity: 1;
 }
 .product-menu button {
-  padding: 8px 15px;
+  padding: 12px 15px;
   background-color: #fff;
   border: 1px solid #cecece;
   color: #797979;

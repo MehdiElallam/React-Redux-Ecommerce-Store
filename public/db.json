@@ -23,7 +23,7 @@
     {
       "id": 3,
       "sku": 876661122392077,
-      "title": "White DGK Script Tee",
+      "title": "White DGK Script Tee T-Shirt",
       "description": "White DGK Script",
       "availableSizes": ["X", "M", "L"],
       "price": 14.9,
@@ -74,7 +74,7 @@
     {
       "id": 8,
       "sku": 5619496040738316,
-      "title": "Tso 3D Black T-Shirt",
+      "title": "Tso 3D Black T-Shirt T-Shirt",
       "description": "",
       "availableSizes": ["XL"],
       "style": "Azul escuro",
@@ -84,7 +84,7 @@
     {
       "id": 9,
       "sku": 11600983276356165,
-      "title": "Crazy Monkey Grey",
+      "title": "Crazy Monkey Grey T-Shirt",
       "description": "",
       "availableSizes": ["L", "XL"],
       "price": 134.9,
