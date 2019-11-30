@@ -166,3 +166,15 @@ span.product-delete {
   color: #ffc107;
   cursor: pointer;
 }
+.shipping {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #f44336;
+  font-weight: bold;
+  position: absolute;
+  top: 28px;
+  right: -23px;
+  transform: rotate(45deg);
+  background: #eaeaea;
+  padding: 0 12px;
+}
