@@ -37,7 +37,7 @@ export const handleAddToCart = (items, product) => dispatch => {
   if (!alreadyIn) {
     cartItems.push({ ...product, quantity: 1 });
   }
-  console.log(cartItems);
+
   return dispatch({
     type: ADD_TO_CART,
     payload: {
