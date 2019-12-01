@@ -1,6 +1,7 @@
 body {
   margin-top: 100px;
   font-family: "Montserrat", sans-serif;
+  /*background: whitesmoke;*/
 }
 .row {
   margin-right: 0 !important;
@@ -47,12 +48,12 @@ span.num {
   right: -10px;
   font-size: 11px;
 }
-.products {
-  margin-top: 40px;
-}
+
 .products .col-mine {
   position: relative;
   border: 0;
+  box-shadow: 0 0 10px #dedede;
+  overflow: hidden;
 }
 .col-mine .cover {
   position: absolute;
@@ -166,10 +167,10 @@ span.product-delete {
   color: #ffc107;
   cursor: pointer;
 }
-.shipping {
+<<<<<<< head .shipping {
   font-size: 12px;
   text-transform: uppercase;
-  color: #f44336;
+  color: #f59800;
   font-weight: bold;
   position: absolute;
   top: 28px;
@@ -177,4 +178,18 @@ span.product-delete {
   transform: rotate(45deg);
   background: #eaeaea;
   padding: 0 12px;
+}
+.banner {
+  margin-top: -30px;
+  margin-bottom: 36px;
+  background-image: url(http://htmlbeans.com/html/schon/images/img11.jpg);
+  background-position: center;
+  height: 179px;
+  width: 100%;
+}
+p.total-price {
+  font-size: 17px;
+  font-weight: bold;
+  color: #ff9800;
+  text-align: center;
 }
