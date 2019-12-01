@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Logo from "../logo.jpg";
 
 export class Header extends Component {
   render() {
@@ -8,7 +9,7 @@ export class Header extends Component {
     return (
       <div>
         <div className="header">
-          <h2>Shopping Store</h2>
+          <img className="logo" src={Logo} />
           <ul className="header-menu">
             <li>
               <Link to="/">HOME</Link>
@@ -29,7 +30,9 @@ export class Header extends Component {
             </li>
           </ul>
         </div>
-        <div className="banner"></div>
+        <div className="banner">
+          <h1>T-SHIRTS</h1>
+        </div>
       </div>
     );
   }

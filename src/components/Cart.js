@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { deleteItemFromCart } from "../redux/cart/cartActions";
 
 export class Cart extends Component {
   render() {
@@ -26,7 +27,7 @@ export class Cart extends Component {
                 </p>
                 <span
                   className="product-delete"
-                  onClick={e => this.props.deleteItemFromCart(item)}
+                  onClick={() => this.props.deleteItemFromCart(cartItems, item)}
                 >
                   <i className="fa fa-trash-o"></i>
                 </span>
@@ -49,4 +50,4 @@ const mapStateToProps = state => {
     cartItems: state.cart.cartItems
   };
 };
-export default connect(mapStateToProps, {})(Cart);
+export default connect(mapStateToProps, { deleteItemFromCart })(Cart);

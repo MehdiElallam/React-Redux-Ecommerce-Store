@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { filterProductsBySize } from "../redux/products/productActions";
+import {
+  filterProductsBySize,
+  handleChangeSort
+} from "../redux/products/productActions";
 
 class Filter extends Component {
   render() {
@@ -34,7 +37,9 @@ class Filter extends Component {
             </select>
             <select
               className="form-control select sort-by"
-              onChange={this.props.handleChangeSort}
+              onChange={e =>
+                this.props.handleChangeSort(this.props.products, e.target.value)
+              }
             >
               <option value="">Default sorting</option>
               <option value="lowest">Lowest to highest</option>
@@ -55,4 +60,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { filterProductsBySize })(Filter);
+export default connect(mapStateToProps, {
+  filterProductsBySize,
+  handleChangeSort
+})(Filter);
