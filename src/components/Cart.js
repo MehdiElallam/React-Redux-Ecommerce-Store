@@ -35,7 +35,9 @@ export class Cart extends Component {
           ))}
           <hr />
 
-          <p>TOTAL: </p>
+          <p className="total-price">
+            TOTAL: 1500 <i className="fa fa-eur"></i>{" "}
+          </p>
         </div>
       </div>
     );

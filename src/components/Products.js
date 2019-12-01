@@ -39,9 +39,15 @@ class Products extends Component {
             </span>
           </p>
           <p className="product-title">{product.title}</p>
+
           <p className="product-price">
-            <i className="fa fa-eur"></i> {product.price}{" "}
+            {product.price} <i className="fa fa-eur"></i>
           </p>
+          {product.isFreeShipping ? (
+            <p className="shipping">Free shipping</p>
+          ) : (
+            ""
+          )}
 
           <div className="product-menu">
             <button
