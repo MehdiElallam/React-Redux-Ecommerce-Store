@@ -26,7 +26,7 @@ export class Cart extends Component {
                 </p>
                 <span
                   className="product-delete"
-                  onClick={e => this.props.deleteItemFromCart(e, item.id)}
+                  onClick={e => this.props.deleteItemFromCart(item)}
                 >
                   <i className="fa fa-trash-o"></i>
                 </span>
@@ -46,7 +46,7 @@ export class Cart extends Component {
 
 const mapStateToProps = state => {
   return {
-    cartItems: state.products.cartItems
+    cartItems: state.cart.cartItems
   };
 };
 export default connect(mapStateToProps, {})(Cart);

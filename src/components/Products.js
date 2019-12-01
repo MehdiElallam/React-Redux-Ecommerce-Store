@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {
-  fetchProducts,
-  handleAddToCart
-} from "../redux/products/productActions";
+import { fetchProducts } from "../redux/products/productActions";
+import { handleAddToCart } from "../redux/cart/cartActions";
 
 class Products extends Component {
   componentWillMount() {
@@ -79,7 +77,7 @@ class Products extends Component {
 const mapStateToProps = state => {
   return {
     products: state.products.filteredItems,
-    cartItems: state.products.cartItems
+    cartItems: state.cart.cartItems
   };
 };
 
