@@ -2,27 +2,26 @@ import React from "react";
 import { Provider } from "react-redux";
 import store from "./Store";
 import Header from "./components/Header";
-import Filter from "./components/Filter";
-import Cart from "./components/Cart";
-import Products from "./components/Products";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="Container">
-          <Header />
-          <Filter />
-          <div className="row">
-            <div className="col-md-3">
-              <Cart />
-            </div>
-            <div className="col-md-9">
-              <Products />
-            </div>
+        <Router>
+          <div className="Container">
+            <Header />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/About" component={About} />
+              <Route exact path="/Contact" component={Contact} />
+            </Switch>
           </div>
-        </div>
+        </Router>
       </Provider>
     );
   }
